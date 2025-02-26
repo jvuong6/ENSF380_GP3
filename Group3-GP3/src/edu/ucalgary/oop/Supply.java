@@ -1,4 +1,4 @@
-package edu;
+package edu.ucalgary.oop;
 
 public class Supply {
     private String type;

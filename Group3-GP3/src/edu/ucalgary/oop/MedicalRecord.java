@@ -21,7 +21,7 @@ public class MedicalRecord {
 
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return this.location;
     }
 

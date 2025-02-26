@@ -1,16 +1,19 @@
 package edu.ucalgary.oop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Location {
     private String name;
     private String address;
-    private DisasterVictim[] occupants;
-    private Supply[] supplies;
+    private List<DisasterVictim> occupants;
+    private List<Supply> supplies;
 
     public Location(String name, String address) {
         this.name = name;
         this.address = address;
-        this.supplies = new Supply[0];
-        this.occupants = new DisasterVictim[0];
+        this.supplies = new ArrayList<>();
+        this.occupants = new ArrayList<>();
     }
 
     public String getName() {
@@ -21,11 +24,11 @@ public class Location {
         return this.address;
     }
 
-    public DisasterVictim[] getOccupants(){
+    public List<DisasterVictim> getOccupants(){
         return this.occupants;
     }
 
-    public Supplies[] getSupplies() {
+    public List<Supply> getSupplies() {
         return this.supplies;
     }
 
@@ -37,11 +40,11 @@ public class Location {
         this.address = address;
     }
 
-    public void setOccupants(DisasterVictim[] occupants) {
+    public void setOccupants(List<DisasterVictim> occupants) {
         this.occupants = occupants;
     }
 
-    public void setSupplies(Supply[] supplies) {
+    public void setSupplies(List<Supply> supplies) {
         this.supplies = supplies;
     }
 
@@ -54,30 +57,10 @@ public class Location {
     }
 
     public void removeOccupant(DisasterVictim remove) {
-        DisasterVictim[] new_occupants = new DisasterVictim[occupants.length - 1];
-        int j = 0;
-
-        for (int i = 0; i < occupants.length; i++) {
-            if (!occupants[i].equals(remove)) {
-                new_occupants[j] = occupants[i];
-                j++;
-            }
-        }
-
-        occupants = new_occupants;
+        occupants.remove(remove);
     }
 
     public void removeSupply(Supply remove) {
-        Supply[] new_supplies = new Supply[supplies.length - 1];
-        int j = 0;
-
-        for (int i = 0; i < supplies.length; i++) {
-            if (!supplies[i].equals(remove)) {
-                new_supplies[j] = supplies[i];
-                j++;
-            }
-        }
-
-        supplies = new_supplies;
+        supplies.remove(remove);
     }
 }
