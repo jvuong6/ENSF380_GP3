@@ -1,13 +1,12 @@
 package edu.ucalgary.oop;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Location {
     private String name;
     private String address;
-    private List<DisasterVictim> occupants;
-    private List<Supply> supplies;
+    private ArrayList<DisasterVictim> occupants;
+    private ArrayList<Supply> supplies;
 
     public Location(String name, String address) {
         this.name = name;
@@ -24,11 +23,11 @@ public class Location {
         return this.address;
     }
 
-    public List<DisasterVictim> getOccupants(){
+    public ArrayList<DisasterVictim> getOccupants(){
         return this.occupants;
     }
 
-    public List<Supply> getSupplies() {
+    public ArrayList<Supply> getSupplies() {
         return this.supplies;
     }
 
@@ -40,11 +39,11 @@ public class Location {
         this.address = address;
     }
 
-    public void setOccupants(List<DisasterVictim> occupants) {
+    public void setOccupants(ArrayList<DisasterVictim> occupants) {
         this.occupants = occupants;
     }
 
-    public void setSupplies(List<Supply> supplies) {
+    public void setSupplies(ArrayList<Supply> supplies) {
         this.supplies = supplies;
     }
 

@@ -1,12 +1,16 @@
 package edu.ucalgary.oop;
 
+import java.util.regex.*;
+
 public class MedicalRecord {
     private Location location;
     private String treatmentDetails;
     private String dateOfTreatment;
 
     private boolean isValidDateFormat(String dateOfTreatment) {
-        return true;
+        Pattern myPattern = Pattern.compile("\\d{4}[-]{0,1}\\d{2}[-]{0,1}\\d{2}");
+        Matcher myMatcher = myPattern.matcher(dateOfTreatment);
+        return myMatcher.find();
     }
 
     public MedicalRecord(Location location, String treatmentDetails, String dateOfTreatment) throws IllegalArgumentException {
