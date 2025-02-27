@@ -17,7 +17,7 @@ public class DisasterVictim {
     private final String ENTRY_DATE;
     private String gender;
     private String comments;
-    private static int counter = 0;
+    private static int counter = 1000; //start at 1000
 
     //constructors and methods
     public DisasterVictim(String firstName, String ENTRY_DATE)
@@ -170,7 +170,7 @@ public class DisasterVictim {
     
     private static int generateSocialID() 
     {
-        return new Random().nextInt(900000) + 100000; // Generates a 6-digit social ID
+        return counter++;
     }
 
     private static boolean isValidDateFormat(String date)
@@ -207,6 +207,12 @@ public class DisasterVictim {
         List<T> list = new ArrayList<>(List.of(array));
         list.remove(item);
         return list.toArray(array);
+    }
+
+    //for getLogDetails method in reliefService class
+    public String getName() 
+    {
+        return (lastName == null || lastName.isEmpty()) ? firstName : firstName + " " + lastName;
     }
 }
 

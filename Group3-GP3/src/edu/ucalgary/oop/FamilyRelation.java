@@ -11,7 +11,7 @@ public class FamilyRelation {
         this.personTwo = personTwo;
     }
 
-    public DisasterVictim getpersonOne()
+    public DisasterVictim getPersonOne()
     {
         return personOne;
     }
